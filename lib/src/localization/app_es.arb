@@ -1,6 +1,27 @@
 {
-  "appTitle": "jlr_flutter_portfolio",
-  "@appTitle": {
-    "description": "Titulo de la aplicación"
-  }
+    "appTitle": "José Reartes Portfolio",
+    "thanks": "Gracias!!!",
+    "submitButton": "Enviar",
+    "userName": "¿Quién eres? (opcional)",
+    "download": "Descargar",
+    "contentSubmitDialog": "Lo aprecio mucho! Pronto lo subiré a mi galería. Vuelve luego para verlo.",
+    "leaveAutograph": "Déjame tu autógrafo o un dibujo",
+    "seeYou": "Nos vemo' campión",
+    "black": "Negro",
+    "blue": "Azul",
+    "red": "Rojo",
+    "erase": "Borrar",
+    "stroke": "Trazo",
+    "undo": "Deshacer",
+    "clear": "Limpiar",
+    "settings": "Configuración",
+    "aboutMe": "Sobre mí",
+    "about": "Sobre mí",
+    "presentation": "Soy José Reartes, desarrollador de aplicaciones móbiles de Córdoba, Argentina.",
+    "summary": "A los 5 años tuve mi primer contacto con una PC en MS-DOS, y desde ese momento nunca deje de curiosear en este fantástico mundo. Luego de cursar dos años en Licenciatura en Computación he sido siempre entusiasta participando y colaborando en distintos proyectos y soluciones a medida. Hace ya casi 4 años me sumergí en el mundo Dart/Flutter y me sigo desarrollando en ese campo. El hambre de conocimiento no cesa, continuo creciendo y ampliando mi aptitudes, descubriendo el increíble poder de Rust. Con la llegada de las IA al alcance popular he abordado la empresa de entrenar un modelo IA como herramienta de desarrollo para Dart/Flutter, para continuar desarrollando una extensión para VSCode con snippets actualizados con las mejores prácticas, arquitecturas, e integración de modelo IA entrenado para Dart/Flutter. Estoy contento que hayas visitado mi perfil, puedes contactarme por mis servicios o contratación.",
+    "experience": "Experiencia",
+    "skillsIhave": "Mis aptitudes",
+    "rightsReserved": "©2023 '42 Awesome Software' - ALL RIGHT RESERVED",
+    "home": "Inicio",
+    "contact": "Contacto"
 }

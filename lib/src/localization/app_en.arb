@@ -1,6 +1,27 @@
 {
-  "appTitle": "jlr_flutter_portfolio",
-  "@appTitle": {
-    "description": "The title of the application"
-  }
+    "appTitle": "Jose Reartes Portfolio",
+    "thanks": "Thanks!!!",
+    "submitButton": "Submit",
+    "userName": "Who are you? (optional)",
+    "download": "Download",
+    "contentSubmitDialog": "I appreciate it, soon I'll post it in my gallery. Comeback later to check it out.",
+    "leaveAutograph": "Leave me your autograph or a cute drawing",
+    "seeYou": "See you space cowboy",
+    "black": "Black",
+    "blue": "Blue",
+    "red": "Red",
+    "erase": "Erase",
+    "stroke": "Stroke",
+    "undo": "Undo",
+    "clear": "Clear",
+    "settings": "Settings",
+    "aboutMe": "Abbout Me",
+    "about": "About",
+    "presentation": "I am José Reartes, multi-platform app developer from Córdobba, Argentina",
+    "summary": "At the age of 5 I had my first contact with a PC running MS-DOS, and from that moment on I never stopped exploring this fantastic world. After completing two years in Computer Science, I have always been enthusiastic about participating and collaborating in different projects and custom solutions. Almost 4 years ago I immersed myself in the Dart/Flutter world and I continue to develop in that field. The hunger for knowledge does not stop, I continue to grow and expand my skills, discovering the incredible power of Rust. With the arrival of the AI ​​to the popular reach I have approached the company of training an AI model as a development tool for Dart/Flutter, to continue developing an extension for VSCode with updated snippets with the best practices, architectures, and integration of the trained AI model. for Dart/Flutter. I'm glad you visited my profile, you can contact me for my services or hiring.",
+    "experience": "Experience",
+    "skillsIhave": "Skills I have",
+    "rightsReserved": "©2023 '42 Awesome Software' - ALL RIGHT RESERVED",
+    "home": "Home",
+    "contact": "Contact" 
 }
