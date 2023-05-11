@@ -1,0 +1,6 @@
+{
+  "appTitle": "jlr_flutter_portfolio",
+  "@appTitle": {
+    "description": "Titulo de la aplicación"
+  }
+}
