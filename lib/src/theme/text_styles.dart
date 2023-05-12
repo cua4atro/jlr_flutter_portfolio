@@ -19,7 +19,7 @@ class TextStyles {
         letterSpacing: 1.0,
       );
 
-  static TextStyle get menu_item => const TextStyle(
+  static TextStyle get menuItem => const TextStyle(
         fontFamily: Fonts.product,
         fontSize: 12.0, //12,.0
         letterSpacing: 1.0,
@@ -37,7 +37,7 @@ class TextStyles {
         letterSpacing: 1.0,
       );
 
-  static TextStyle get sub_heading => const TextStyle(
+  static TextStyle get subHeading => const TextStyle(
         //color: Color(0xFF45405B),
         fontFamily: Fonts.product,
         fontSize: 17.0, //17.0
