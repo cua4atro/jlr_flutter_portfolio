@@ -23,6 +23,19 @@ class HomeView extends StatelessWidget {
         ),
         backgroundColor: darkAppBarColor,
         elevation: 0.0,
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.pushNamed(context, '/drawer_page');
+            },
+            child: Text(
+              txt.leaveYourSign,
+            ),
+          ),
+          const SizedBox(
+            width: 18,
+          ),
+        ],
       ),
       body: ResponsiveLayoutBuilder(
         small: (context, constraints) =>

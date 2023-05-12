@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:jlr_flutter_portfolio/src/drawer/drawer.dart';
 import 'package:jlr_flutter_portfolio/src/home/home.dart';
 
 import 'sample_feature/sample_item_details_view.dart';
@@ -76,6 +77,8 @@ class MyApp extends StatelessWidget {
                     return const SampleItemDetailsView();
                   case SampleItemListView.routeName:
                     return const SampleItemListView();
+                  case DrawerPage.routeName:
+                    return const DrawerPage();
                   case HomePage.routeName:
                   default:
                     return const HomePage();

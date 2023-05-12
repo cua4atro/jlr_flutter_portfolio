@@ -20,7 +20,7 @@ class HomeBodySmallView extends StatelessWidget {
       builder: (context, constraints) => ConstrainedBox(
         constraints: BoxConstraints(maxHeight: constraints.maxHeight),
         child: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(
+          padding: const EdgeInsets.symmetric(
             horizontal: 24,
           ),
           child: Column(
