@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:developer' as developer;
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_bubble/chat_bubble.dart';
+import 'package:jlr_flutter_portfolio/src/localization/l10n.dart';
 
 class SecretaryChatBubbles extends StatefulWidget {
   const SecretaryChatBubbles({super.key});
@@ -11,16 +12,17 @@ class SecretaryChatBubbles extends StatefulWidget {
 }
 
 class _SecretaryChatBubblesState extends State<SecretaryChatBubbles> {
+  bool isFinished = false;
   ValueNotifier<int> index = ValueNotifier(0);
 
   Future<void> starTalking() async {
     const duration = Duration(seconds: 5);
     Timer.periodic(duration, (Timer t) {
-      if (index.value < 24) {
+      if (index.value < 13 && !isFinished) {
         _incrementIndex();
       } else {
         setState(() {
-          index.value = 0;
+          isFinished = true;
         });
       }
     });
@@ -41,32 +43,22 @@ class _SecretaryChatBubblesState extends State<SecretaryChatBubbles> {
 
   @override
   Widget build(BuildContext context) {
+    final txt = AppLocalizations.of(context);
     final List<String> phrases = [
-      'hola',
-      'como estas',
-      'no esta funcionando esto',
-      'a veces tengo mucho trabajo que resolver pero las documentacione no son muy claras',
-      'pero es algo que difruto mucho',
-      'aunque todo cansa,',
-      'hola',
-      'como estas',
-      'no esta funcionando esto',
-      'a veces tengo mucho trabajo que resolver',
-      'pero es algo que difruto mucho',
-      'aunque todo cansa,',
-      'hola',
-      'como estas',
-      'no esta funcionando esto',
-      'a veces tengo mucho trabajo que resolver',
-      'pero es algo que difruto mucho',
-      'aunque todo cansa,',
-      'hola',
-      'como estas',
-      'no esta funcionando esto',
-      'a veces tengo mucho trabajo que resolver pero las documentacione no son muy claras',
-      'pero es algo que difruto mucho',
-      'aunque todo cansa,',
-      'perro'
+      txt.hello,
+      txt.secretary1,
+      txt.secretary2,
+      txt.secretary3,
+      txt.secretary4,
+      txt.secretary5,
+      txt.secretary6,
+      txt.secretary7,
+      txt.secretary8,
+      txt.secretary9,
+      txt.secretary10,
+      txt.secretary11,
+      txt.secretary12,
+      txt.secretary13,
     ];
     return LayoutBuilder(
       builder: (context, constraints) {
@@ -83,6 +75,7 @@ class _SecretaryChatBubblesState extends State<SecretaryChatBubbles> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   ChatBubble(
+                    backGroundColor: Colors.grey,
                     alignment: Alignment.center,
                     clipper: ChatBubbleClipper3(
                       type: BubbleType.sendBubble,
@@ -95,6 +88,11 @@ class _SecretaryChatBubblesState extends State<SecretaryChatBubbles> {
                         ),
                         child: Text(
                           phrases[index.value],
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
                         ),
                       ),
                     ),
