@@ -4,7 +4,7 @@ import 'package:jlr_flutter_portfolio/src/home/views/home_view.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  static const routeName = '/home';
+  static const routeName = '/home_page';
 
   @override
   Widget build(BuildContext context) {
