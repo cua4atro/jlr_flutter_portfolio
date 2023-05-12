@@ -10,6 +10,7 @@ class PortfolioFooter extends StatelessWidget {
   Widget build(BuildContext context) {
     final txt = AppLocalizations.of(context);
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         const Divider(),
         Padding(

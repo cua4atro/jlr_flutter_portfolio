@@ -9,7 +9,7 @@ class SocialIconButtons extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(12.0),
       child: Row(
-        mainAxisSize: MainAxisSize.max,
+        mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           GestureDetector(

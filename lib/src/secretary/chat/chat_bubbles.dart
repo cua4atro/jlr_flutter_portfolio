@@ -5,7 +5,9 @@ import 'package:flutter_chat_bubble/chat_bubble.dart';
 import 'package:jlr_flutter_portfolio/src/localization/l10n.dart';
 
 class SecretaryChatBubbles extends StatefulWidget {
-  const SecretaryChatBubbles({super.key});
+  const SecretaryChatBubbles({super.key, required this.isSmall});
+
+  final bool isSmall;
 
   @override
   State<SecretaryChatBubbles> createState() => _SecretaryChatBubblesState();
@@ -18,13 +20,19 @@ class _SecretaryChatBubblesState extends State<SecretaryChatBubbles> {
   Future<void> starTalking() async {
     const duration = Duration(seconds: 5);
     Timer.periodic(duration, (Timer t) {
-      if (index.value < 13 && !isFinished) {
+      if (index.value < 13 && !isFinished && context.mounted) {
         _incrementIndex();
-      } else {
+      } else if (context.mounted) {
         setState(() {
           isFinished = true;
         });
       }
+    });
+  }
+
+  void finishScretary() {
+    setState(() {
+      isFinished = true;
     });
   }
 
@@ -39,6 +47,12 @@ class _SecretaryChatBubblesState extends State<SecretaryChatBubbles> {
   void initState() {
     starTalking();
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    finishScretary();
+    super.dispose();
   }
 
   @override
@@ -68,7 +82,7 @@ class _SecretaryChatBubblesState extends State<SecretaryChatBubbles> {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisAlignment: MainAxisAlignment.end,
-            mainAxisSize: MainAxisSize.max,
+            mainAxisSize: MainAxisSize.min,
             children: [
               Column(
                 mainAxisSize: MainAxisSize.max,
@@ -84,12 +98,12 @@ class _SecretaryChatBubblesState extends State<SecretaryChatBubbles> {
                       valueListenable: index,
                       builder: (context, value, child) => ConstrainedBox(
                         constraints: BoxConstraints(
-                          maxWidth: constraints.maxWidth / 3,
+                          maxWidth: constraints.maxWidth * .32,
                         ),
                         child: Text(
                           phrases[index.value],
-                          style: const TextStyle(
-                            fontSize: 16,
+                          style: TextStyle(
+                            fontSize: constraints.maxWidth < 500 ? 10 : 16,
                             fontWeight: FontWeight.bold,
                             color: Colors.black,
                           ),
@@ -103,7 +117,8 @@ class _SecretaryChatBubblesState extends State<SecretaryChatBubbles> {
                 ],
               ),
               SizedBox(
-                width: constraints.maxWidth / 1.65,
+                height: 10,
+                width: constraints.maxWidth * .62,
               ),
             ],
           ),

@@ -2,18 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:jlr_flutter_portfolio/src/secretary/chat/chat_bubbles.dart';
 
 class SecretaryView extends StatelessWidget {
-  const SecretaryView({super.key});
+  const SecretaryView({super.key, required this.isSmall});
+  final bool isSmall;
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Container(
-      constraints: BoxConstraints(
-        maxHeight: size.width / 2,
-        maxWidth: (size.width - 24) / 2,
-      ),
-      width: (size.width - 24) / 2,
-      height: (((size.width - 24) / 2) * (3 / 4)),
+      constraints: !isSmall
+          ? BoxConstraints(
+              maxHeight: size.width / 2,
+              maxWidth: (size.width - 24) / 2,
+            )
+          : BoxConstraints(
+              maxWidth: size.width * .8, maxHeight: size.width * .6),
+      width: !isSmall ? (size.width - 24) / 2 : size.width - 60,
+      height: !isSmall
+          ? (((size.width - 24) / 2) * (3 / 4))
+          : (size.width - 60) * (3 / 4),
       decoration: const BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.contain,
@@ -23,9 +29,11 @@ class SecretaryView extends StatelessWidget {
           ),
         ),
       ),
-      child: const Stack(
+      child: Stack(
         children: [
-          SecretaryChatBubbles(),
+          SecretaryChatBubbles(
+            isSmall: isSmall,
+          ),
         ],
       ),
     );

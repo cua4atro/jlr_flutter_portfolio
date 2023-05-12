@@ -10,12 +10,14 @@ class SkillsAndEduView extends StatelessWidget {
   Widget build(BuildContext context) {
     final txt = AppLocalizations.of(context);
     return Row(
+      mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Expanded(
           flex: 1,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               Text(
                 txt.experience,
