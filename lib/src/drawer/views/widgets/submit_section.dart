@@ -1,6 +1,8 @@
 import 'dart:ui' as ui;
+import 'dart:developer' as develop;
 
 import 'package:file_saver/file_saver.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -31,7 +33,7 @@ class SubmitSection extends StatelessWidget {
           padding: const EdgeInsets.all(15.0),
           child: ElevatedButton(
             style: style,
-            onPressed: () {
+            onPressed: () async {
               showDialog(
                 context: context,
                 builder: (context) => AlertDialog(
@@ -60,6 +62,20 @@ class SubmitSection extends StatelessWidget {
                   ],
                 ),
               );
+              Uint8List? pngBytes = await getBytes();
+
+              const extension = 'png';
+              final storageRef = FirebaseStorage.instance.ref();
+              UploadTask? uploadTask;
+              final userName = textController.text;
+              final nameF = (userName.isNotEmpty)
+                  ? '$userName-${DateTime.now().toIso8601String()}.$extension'
+                  : 'AnonimusRockStar-${DateTime.now().toIso8601String()}.$extension';
+
+              uploadTask = storageRef.child(nameF).putData(pngBytes!);
+              final snapshot = await uploadTask.whenComplete(() {
+                develop.log("uploapded");
+              });
             },
             child: Text(txt.submitButton),
           ),
