@@ -15,16 +15,12 @@ class ResponsiveLayoutBuilder extends StatelessWidget {
   const ResponsiveLayoutBuilder({
     required this.small,
     required this.large,
-    required this.medium,
     this.child,
     super.key,
   });
 
   /// [ResponsiveLayoutWidgetBuilder] for small layout.
   final ResponsiveLayoutWidgetBuilder small;
-
-  /// [ResponsiveLayoutWidgetBuilder] for medium layout.
-  final ResponsiveLayoutWidgetBuilder medium;
 
   /// [ResponsiveLayoutWidgetBuilder] for large layout.
   final ResponsiveLayoutWidgetBuilder large;
@@ -38,12 +34,10 @@ class ResponsiveLayoutBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        if (constraints.maxWidth < PortfolioBreakpoints.medium) {
+        if (constraints.maxWidth <= PortfolioBreakpoints.medium) {
           return small(context, child);
         }
-        if (constraints.maxWidth < PortfolioBreakpoints.large) {
-          return medium(context, child);
-        }
+
         return large(context, child);
       },
     );
